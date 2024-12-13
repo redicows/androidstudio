@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.simpens40'
+    compileSdk 33 // Update ke versi SDK terbaru
+
+    defaultConfig {
+        applicationId "com.simpens40"
+        minSdk 25
+        targetSdk 33 // Update ke versi target terbaru
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Jika menggunakan ViewBinding atau Compose
+    buildFeatures {
+        viewBinding true // Aktifkan jika pakai ViewBinding
+        // compose true   // Aktifkan jika pakai Jetpack Compose
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.0' // Versi terbaru
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Test Dependencies
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // Update ke versi terbaru
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // Update ke versi terbaru
+}
